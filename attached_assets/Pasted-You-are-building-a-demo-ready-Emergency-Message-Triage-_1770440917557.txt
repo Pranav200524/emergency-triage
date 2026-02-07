@@ -1,0 +1,117 @@
+You are building a demo-ready Emergency Message Triage & Resource Matching Dashboard for disaster response teams.
+
+Objective
+
+Create a dispatcher-facing decision-support web app that ingests bulk emergency messages, extracts urgency and location, ranks requests, and matches them with nearby verified resources. This is not a public app; it simulates backend triage used by NGOs and control rooms.
+
+Tech Stack (use exactly this)
+
+Frontend: React + Vite + Tailwind CSS
+
+Backend: Node.js + Express
+
+NLP: OpenAI API (prompt-based JSON extraction)
+
+Maps: Leaflet + OpenStreetMap + Nominatim
+
+Storage: In-memory JSON only (no database)
+
+Core Features (ONLY these 3)
+
+Bulk Message Ingestion
+
+Textarea where multiple emergency messages are pasted (newline-separated)
+
+Button: “Analyze Messages”
+
+Label UI clearly as “Simulated Emergency Message Feed (Dispatcher View)”
+
+NLP-Based Triage & Explainable Urgency Scoring
+
+For each message, extract:
+
+need
+
+quantity (or null)
+
+location (text)
+
+urgency_level (low / medium / high)
+
+urgency_reason (one sentence)
+
+Use OpenAI API with a structured prompt and JSON-only response
+
+Compute an urgency score (0–100) locally using simple rules
+
+Display urgency score + explanation in UI
+
+Resource Matching & Map Visualization
+
+Hardcode 8–10 verified resources (ambulance, shelter, food center) with lat/lng
+
+Match requests to resources based on need type and proximity
+
+Show ranked results in a table
+
+Display request + matched resource on a Leaflet map
+
+Backend Requirements
+
+Single Express endpoint: /analyze
+
+Accept bulk messages as array
+
+Call OpenAI API per message
+
+Parse JSON safely
+
+Compute urgency score and match resources
+
+Return clean structured response to frontend
+
+Include fallback logic if OpenAI fails (basic keyword rules)
+
+NLP Prompt Template
+
+Use this exact structure:
+
+Extract emergency details from the message.
+Return ONLY valid JSON with:
+- need
+- quantity
+- location
+- urgency_level
+- urgency_reason
+
+Message: "{{message}}"
+
+Urgency Scoring Logic
+
+High urgency → base 70
+
+Medium urgency → base 40
+
+Low urgency → base 20
+
++10 if medical keywords
+
++10 if children or elderly mentioned
+
+Cap score at 100
+
+Always provide a human-readable explanation
+
+Constraints
+
+No authentication
+
+No database
+
+No test cases
+
+No background jobs
+
+Prioritize clarity, visual polish, and explainability
+
+UI should look like a government/NGO dashboard, not an AI toy
