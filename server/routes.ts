@@ -30,22 +30,20 @@ function deg2rad(deg: number) {
 // Here we will map common NYC neighborhoods to rough coordinates or random jitter around NYC.
 // Or we can try to use a simple lookup.
 const LOCATION_MAP: Record<string, { lat: number, lng: number }> = {
-  "Times Square": { lat: 40.7580, lng: -73.9855 },
-  "Central Park": { lat: 40.7829, lng: -73.9654 },
-  "Brooklyn Bridge": { lat: 40.7061, lng: -73.9969 },
-  "Empire State Building": { lat: 40.7484, lng: -73.9857 },
-  "Grand Central": { lat: 40.7527, lng: -73.9772 },
-  "Harlem": { lat: 40.8116, lng: -73.9465 },
-  "Chelsea": { lat: 40.7465, lng: -74.0014 },
-  "SoHo": { lat: 40.7233, lng: -74.0030 },
-  "Tribeca": { lat: 40.7163, lng: -74.0086 },
-  "Chinatown": { lat: 40.7158, lng: -73.9970 },
-  "Battery Park": { lat: 40.7033, lng: -74.0170 },
-  "Wall Street": { lat: 40.7074, lng: -74.0113 },
-  "Greenwich Village": { lat: 40.7336, lng: -74.0027 },
-  "East Village": { lat: 40.7264, lng: -73.9818 },
-  "Upper West Side": { lat: 40.7870, lng: -73.9754 },
-  "Upper East Side": { lat: 40.7736, lng: -73.9566 },
+  "T. Nagar": { lat: 13.0418, lng: 80.2341 },
+  "Marina Beach": { lat: 13.0500, lng: 80.2824 },
+  "Chennai Central": { lat: 13.0827, lng: 80.2707 },
+  "Anna Nagar": { lat: 13.0850, lng: 80.2101 },
+  "Adyar": { lat: 13.0067, lng: 80.2578 },
+  "Velachery": { lat: 12.9791, lng: 80.2185 },
+  "Mylapore": { lat: 13.0330, lng: 80.2677 },
+  "Guindy": { lat: 13.0067, lng: 80.2206 },
+  "Kodambakkam": { lat: 13.0521, lng: 80.2255 },
+  "Besant Nagar": { lat: 13.0003, lng: 80.2665 },
+  "Egmore": { lat: 13.0783, lng: 80.2619 },
+  "Nungambakkam": { lat: 13.0588, lng: 80.2435 },
+  "Saidapet": { lat: 13.0213, lng: 80.2231 },
+  "Tambaram": { lat: 12.9229, lng: 80.1275 },
 };
 
 function approximateGeocode(locationText: string): { lat: number, lng: number } {
@@ -54,15 +52,15 @@ function approximateGeocode(locationText: string): { lat: number, lng: number } 
     if (locationText.toLowerCase().includes(key.toLowerCase())) {
       // Add slight jitter so multiple markers don't overlap perfectly
       return {
-        lat: coords.lat + (Math.random() - 0.5) * 0.002,
-        lng: coords.lng + (Math.random() - 0.5) * 0.002
+        lat: coords.lat + (Math.random() - 0.5) * 0.005,
+        lng: coords.lng + (Math.random() - 0.5) * 0.005
       };
     }
   }
-  // Default to random spot in NYC if unknown
+  // Default to random spot in Chennai if unknown
   return {
-    lat: 40.75 + (Math.random() - 0.5) * 0.1, // Approx range 40.70 - 40.80
-    lng: -73.98 + (Math.random() - 0.5) * 0.1 // Approx range -74.03 - -73.93
+    lat: 13.05 + (Math.random() - 0.5) * 0.1,
+    lng: 80.25 + (Math.random() - 0.5) * 0.1
   };
 }
 

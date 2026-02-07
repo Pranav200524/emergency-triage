@@ -57,7 +57,7 @@ function MapController({ center }: { center: [number, number] }) {
 }
 
 export function MapVisualization({ resources, analyzedMessages }: MapVisualizationProps) {
-  const nycCenter: [number, number] = [40.7128, -74.0060];
+  const chennaiCenter: [number, number] = [13.0827, 80.2707];
 
   return (
     <div className="w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl relative">
@@ -78,8 +78,8 @@ export function MapVisualization({ resources, analyzedMessages }: MapVisualizati
       </div>
 
       <MapContainer 
-        center={nycCenter} 
-        zoom={13} 
+        center={chennaiCenter} 
+        zoom={12} 
         scrollWheelZoom={true}
         className="w-full h-full bg-slate-900"
       >
@@ -89,7 +89,7 @@ export function MapVisualization({ resources, analyzedMessages }: MapVisualizati
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         />
         
-        <MapController center={nycCenter} />
+        <MapController center={chennaiCenter} />
 
         {/* Resources */}
         {resources.map((res) => (

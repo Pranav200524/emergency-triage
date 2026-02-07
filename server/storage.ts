@@ -13,16 +13,16 @@ export class MemStorage implements IStorage {
   constructor() {
     this.results = [];
     this.resources = [
-      { id: "1", name: "Mount Sinai Hospital", type: "Ambulance", lat: 40.7891, lng: -73.9529, status: "Available" },
-      { id: "2", name: "Bellevue Hospital", type: "Ambulance", lat: 40.7396, lng: -73.9765, status: "Available" },
-      { id: "3", name: "NY Presbyterian", type: "Ambulance", lat: 40.8402, lng: -73.9431, status: "Busy" },
-      { id: "4", name: "Red Cross Shelter A", type: "Shelter", lat: 40.7128, lng: -74.0060, status: "Available" },
-      { id: "5", name: "Brooklyn Tech Shelter", type: "Shelter", lat: 40.6888, lng: -73.9764, status: "Available" },
-      { id: "6", name: "Food Bank NYC", type: "Food", lat: 40.8030, lng: -73.9500, status: "Available" },
-      { id: "7", name: "City Harvest", type: "Food", lat: 40.7550, lng: -73.9950, status: "Available" },
-      { id: "8", name: "FDNY Battalion 9", type: "Fire", lat: 40.7600, lng: -73.9840, status: "Available" },
-      { id: "9", name: "NYPD Precinct 14", type: "Police", lat: 40.7500, lng: -73.9900, status: "Available" },
-      { id: "10", name: "St. Mary's Shelter", type: "Shelter", lat: 40.8100, lng: -73.9200, status: "Busy" },
+      { id: "1", name: "Apollo Hospital", type: "Ambulance", lat: 13.0645, lng: 80.2504, status: "Available" },
+      { id: "2", name: "MMM Hospital", type: "Ambulance", lat: 13.0841, lng: 80.1887, status: "Available" },
+      { id: "3", name: "SIMS Hospital", type: "Ambulance", lat: 13.0514, lng: 80.2104, status: "Busy" },
+      { id: "4", name: "Relief Shelter Chennai Central", type: "Shelter", lat: 13.0827, lng: 80.2707, status: "Available" },
+      { id: "5", name: "Anna Nagar Community Center", type: "Shelter", lat: 13.0850, lng: 80.2101, status: "Available" },
+      { id: "6", name: "Tamil Nadu Food Bank", type: "Food", lat: 13.0400, lng: 80.2400, status: "Available" },
+      { id: "7", name: "Amma Unavagam", type: "Food", lat: 13.0700, lng: 80.2200, status: "Available" },
+      { id: "8", name: "Fire & Rescue Mylapore", type: "Fire", lat: 13.0330, lng: 80.2677, status: "Available" },
+      { id: "9", name: "Chennai Police HQ", type: "Police", lat: 13.0418, lng: 80.2755, status: "Available" },
+      { id: "10", name: "St. Thomas Mount Shelter", type: "Shelter", lat: 13.0035, lng: 80.2014, status: "Busy" },
     ];
   }
 
